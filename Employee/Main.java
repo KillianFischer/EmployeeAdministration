@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    
     // remove an employee by name
     private static void removeEmployeeByName(String name) {
         for (Abteilung obj:Abteilung.allDepartments){
@@ -18,6 +19,8 @@ public class Main {
 
     public static void main(String[] args) {
         // Erstellen von Abteilungen
+
+        File filename = new File("CSV/employee.csv");
 
         Abteilung it = new Abteilung("IT", new Manager("Janna", 10.0, 0.1));
         Abteilung vertrieb = new Abteilung("Vertrieb", new Manager("Soraka", 600, 0.15));
