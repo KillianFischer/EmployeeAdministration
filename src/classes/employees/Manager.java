@@ -1,4 +1,6 @@
-class Manager extends BueroArbeiter {
+package classes.employees;
+
+public class Manager extends OfficeEmployee {
     public static int counter=0;
     //private double festgehalt;
     private double bonusSatz;

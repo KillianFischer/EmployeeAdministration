@@ -1,36 +1,42 @@
+package classes.utility;
+
+import classes.employees.Employee;
+import classes.employees.OfficeEmployee;
+import classes.employees.ShiftEmployee;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-class Abteilung {
+public class Abteilung {
     private  String name;
-    private Mitarbeiter leiter;
-    private List<Mitarbeiter> mitarbeiterList;
+    private Employee leiter;
+    private List<Employee> employeeList;
     public static List<Abteilung> allDepartments = new ArrayList<>();
 
-    public Abteilung(String name, Mitarbeiter leiter) {
+    public Abteilung(String name, Employee leiter) {
         this.name = name;
-        this.mitarbeiterList = new ArrayList<>();
+        this.employeeList = new ArrayList<>();
         this.leiter = leiter;
-        mitarbeiterList.add(leiter);
+        employeeList.add(leiter);
         allDepartments.add(this);
     }
 
-    public void addMitarbeiter(Mitarbeiter neuer) {
-        mitarbeiterList.add(neuer);
+    public void addEmployee(Employee neuer) {
+        employeeList.add(neuer);
     }
 
-    public void removeMitarbeiter(Mitarbeiter welcher) {
-        mitarbeiterList.remove(welcher);
+    public void removeEmployee(Employee welcher) {
+        employeeList.remove(welcher);
     }
 
-    public void changeLeiter(Mitarbeiter neuerManager) {
-        this.leiter.setID(BueroArbeiter.counter+5100);
-        this.removeMitarbeiter(this.leiter);
-        BueroArbeiter newBueroArbeiter = new BueroArbeiter(leiter.getName(),leiter.einkommen());
-        this.addMitarbeiter(leiter);
+    public void changeLeiter(Employee neuerManager) {
+        this.leiter.setID(OfficeEmployee.counter+5100);
+        this.removeEmployee(this.leiter);
+        OfficeEmployee newOfficeEmployee = new OfficeEmployee(leiter.getName(),leiter.einkommen());
+        this.addEmployee(leiter);
         this.leiter = neuerManager;
-        this.addMitarbeiter(this.leiter);
+        this.addEmployee(this.leiter);
     }
 
     public String gehaltsliste() {
@@ -39,7 +45,7 @@ class Abteilung {
 
         double gesamtGehalt = 0;
 
-        for (Mitarbeiter mitarbeiter : mitarbeiterList) {
+        for (Employee mitarbeiter : employeeList) {
             double gehalt = mitarbeiter.einkommen();
             gesamtGehalt += gehalt;
             gehaltsliste.append(mitarbeiter.getName()).append(" (ID: ").append(mitarbeiter.getID()).append("): ")
@@ -51,9 +57,9 @@ class Abteilung {
         return gehaltsliste.toString();
     }
 
-    public List<Mitarbeiter> getMitarbeiterList() {
-        return mitarbeiterList;
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
     public String getName(){return this.name;}
-    public Mitarbeiter getLeiter(){return this.leiter;}
+    public Employee getLeiter(){return this.leiter;}
 }

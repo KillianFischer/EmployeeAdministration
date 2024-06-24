@@ -1,3 +1,5 @@
+package classes.vehicles;
+
 public class Position {
     private double Laengengrad;
     private double Breitengrad;

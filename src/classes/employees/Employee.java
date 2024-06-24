@@ -1,8 +1,10 @@
-abstract class Mitarbeiter {
+package classes.employees;
+
+public abstract class Employee {
     private int ID;
     private String name;
 
-    public Mitarbeiter(int ID, String name) {
+    public Employee(int ID, String name) {
         this.ID = ID;
         this.name = name;
     }

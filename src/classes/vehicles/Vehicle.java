@@ -1,14 +1,17 @@
-public abstract class KFZ {
+package classes.vehicles;
+import classes.employees.Driver;
+
+public abstract class Vehicle {
     private double tanksize;
     private double tankinhalt;
     private double speed;
     private int maxspeed;
-    private Fahrer fahrer;
+    private Driver fahrer;
     private boolean motoran;
     private Position aktuelleposition;
 
 
-    public KFZ (double tanksize, int maxspeed, Position aktuelleposition){
+    public Vehicle(double tanksize, int maxspeed, Position aktuelleposition){
         this.tanksize = tanksize;
         this.maxspeed = maxspeed;
     }

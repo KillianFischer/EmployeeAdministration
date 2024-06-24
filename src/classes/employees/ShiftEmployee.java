@@ -1,9 +1,11 @@
-class SchichtArbeiter extends Mitarbeiter {
+package classes.employees;
+
+public class ShiftEmployee extends Employee {
     public static int counter=0;
     private double stundenSatz;
     private int anzahlStunden;
 
-    public SchichtArbeiter(String name, double stundenSatz) {
+    public ShiftEmployee(String name, double stundenSatz) {
         super(counter+3000, name);
         this.stundenSatz = stundenSatz;
         counter++;
