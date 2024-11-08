@@ -1,17 +1,17 @@
 package classes.employees;
 
 public class OfficeEmployee extends Employee {
-    public static int counter=0;
-    private double festgehalt;
+    public static int counter = 0;
+    private double salary;
 
-    public OfficeEmployee(String name, double festgehalt) {
-        super(counter+5100, name);
-        this.festgehalt = festgehalt;
+    public OfficeEmployee(String name, double salary) {
+        super(counter + 5100, name);
+        this.salary = salary;
         counter++;
     }
 
     @Override
-    public double einkommen() {
-        return festgehalt;
+    public double getIncome() {
+        return salary;
     }
 }

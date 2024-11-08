@@ -1,9 +1,9 @@
 package classes.vehicles;
 
-public class Bus extends PassengerCar {
+public class Bus extends PassengerCarTest {
 
 
-    public Bus(double tanksize, int maxspeed, Position aktuelleposition) {
+    public Bus(double tanksize, int maxspeed, PositionTest aktuelleposition) {
         super(tanksize, maxspeed, aktuelleposition);
     }
 }

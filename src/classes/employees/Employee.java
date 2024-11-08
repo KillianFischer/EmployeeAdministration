@@ -1,28 +1,29 @@
 package classes.employees;
 
 public abstract class Employee {
-    private int ID;
+    private int id;
     private String name;
 
-    public Employee(int ID, String name) {
-        this.ID = ID;
+    public Employee(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
-    public void setID(int id) {
-        this.ID=id;
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public abstract double einkommen();
-
     public void setName(String name) {
         this.name = name;
     }
+
+    public abstract double getIncome();
 }

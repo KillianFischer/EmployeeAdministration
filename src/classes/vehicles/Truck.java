@@ -1,6 +1,6 @@
 package classes.vehicles;
 
-public class Truck extends Vehicle {
+public class Truck extends VehicleTest {
  private double Ladeflaeche;
 
 

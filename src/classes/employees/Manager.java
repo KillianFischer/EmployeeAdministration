@@ -1,25 +1,22 @@
 package classes.employees;
 
 public class Manager extends OfficeEmployee {
-    public static int counter=0;
-    //private double festgehalt;
-    private double bonusSatz;
+    public static int counter = 0;
+    private double bonusRate;
 
-    public Manager(String name, double festgehalt, double bonusSatz) {
-        super(name,festgehalt);
-        super.setID(counter+5000);
-        //this.festgehalt = festgehalt;
-        this.bonusSatz = bonusSatz;
-        super.counter--;
+    public Manager(String name, double salary, double bonusRate) {
+        super(name, salary);
+        super.setId(counter + 5000);
+        this.bonusRate = bonusRate;
         counter++;
     }
 
-    public double berechneBonus() {
-        return super.einkommen() * (bonusSatz / 100.0);
+    public double calculateBonus() {
+        return super.getIncome() * (bonusRate / 100.0);
     }
 
     @Override
-    public double einkommen() {
-        return super.einkommen() + berechneBonus();
+    public double getIncome() {
+        return super.getIncome() + calculateBonus();
     }
 }

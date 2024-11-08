@@ -1,36 +1,34 @@
 package classes.employees;
 
 public class ShiftEmployee extends Employee {
-    public static int counter=0;
-    private double stundenSatz;
-    private int anzahlStunden;
+    public static int counter = 0;
+    private double hourlyRate;
+    private int hoursWorked;
 
-    public ShiftEmployee(String name, double stundenSatz) {
-        super(counter+3000, name);
-        this.stundenSatz = stundenSatz;
+    public ShiftEmployee(String name, double hourlyRate) {
+        super(counter + 3000, name);
+        this.hourlyRate = hourlyRate;
         counter++;
     }
 
-
-
-    public double getStundenSatz() {
-        return stundenSatz;
+    public double getHourlyRate() {
+        return hourlyRate;
     }
 
-    public void setStundenSatz(double stundenSatz) {
-        this.stundenSatz = stundenSatz;
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
     }
 
-    public int getAnzahlStunden() {
-        return anzahlStunden;
+    public int getHoursWorked() {
+        return hoursWorked;
     }
 
-    public void setAnzahlStunden(int anzahlStunden) {
-        this.anzahlStunden = anzahlStunden;
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
     }
 
     @Override
-    public double einkommen() {
-        return stundenSatz * anzahlStunden;
+    public double getIncome() {
+        return hourlyRate * hoursWorked;
     }
 }
